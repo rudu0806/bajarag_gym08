@@ -18,47 +18,6 @@
             background: #000;
         }
 
-        /* Navigation */
-        nav {
-            background: rgba(0, 0, 0, 0.95);
-            padding: 1rem 5%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 3px solid #ff4444;
-        }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #ff4444;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-        }
-
-        .nav-links a:hover {
-            color: #ff4444;
-        }
-
         /* Hero Section */
         .hero {
             height: 100vh;
@@ -354,15 +313,6 @@
             border-color: #ff4444;
         }
 
-        /* Footer */
-        footer {
-            background: #000;
-            color: #fff;
-            text-align: center;
-            padding: 2rem;
-            border-top: 3px solid #ff4444;
-        }
-
         @keyframes slideInLeft {
             from {
                 opacity: 0;
@@ -396,41 +346,7 @@
             }
         }
 
-        /* Mobile Menu */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background: #ff4444;
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: flex;
-            }
-
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: rgba(0, 0, 0, 0.98);
-                padding: 2rem;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
             .hero-content h1 {
                 font-size: 2.5rem;
             }
@@ -447,22 +363,6 @@
     </style>
 </head>
 <body>
-    <nav id="navbar">
-        <div class="logo">💪 bajrangPower</div>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#programs">Programs</a></li>
-            <li><a href="#trainers">Trainers</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Transform Your <span>Body</span></h1>
@@ -628,19 +528,7 @@
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 FitPower Gym. All rights reserved.</p>
-        <p>📞 +1 (555) 987-6543 | 📧 info@fitpowergym.com</p>
-        <p>🏢 123 Fitness Street, Gym City, GC 12345</p>
-    </footer>
-
     <script>
-        // Mobile menu toggle
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
-        }
-
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -651,7 +539,6 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
-                    document.getElementById('navLinks').classList.remove('active');
                 }
             });
         });
@@ -697,16 +584,6 @@
             alert('Thank you for your interest! We will contact you within 24 hours to schedule your free trial session.');
             e.target.reset();
         }
-
-        // Navbar background on scroll
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(0, 0, 0, 1)';
-            } else {
-                navbar.style.background = 'rgba(0, 0, 0, 0.95)';
-            }
-        });
     </script>
 </body>
 </html>
