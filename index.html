@@ -6,7 +6,54 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Welcome to Bajarag Gym</h1>
-    <p>Your fitness journey starts here!</p>
+    <footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <a href="/" class="footer-logo" aria-label="Homepage">YourSite</a>
+      <p class="footer-desc">Health • Strength • Community</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="#about">About</a>
+      <a href="#classes">Classes</a>
+      <a href="#trainers">Trainers</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="footer-right">
+      <div class="social" aria-label="Social links">
+        <a href="#" aria-label="Facebook" class="social-link">Facebook</a>
+        <a href="#" aria-label="Instagram" class="social-link">Instagram</a>
+        <a href="#" aria-label="Twitter" class="social-link">Twitter</a>
+      </div>
+      <p class="copyright">© <span id="footer-year"></span> YourSite. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+.site-footer{background:#0b1220;color:#e6eef8;padding:28px 16px;font-family:Arial,Helvetica,sans-serif}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:flex-start;gap:16px}
+.footer-left{flex:1 1 220px}
+.footer-logo{font-weight:700;color:#fff;text-decoration:none;font-size:1.1rem}
+.footer-desc{margin:6px 0 0;color:#b6c6d9;font-size:0.95rem}
+.footer-nav{display:flex;flex:1 1 240px;gap:12px;flex-wrap:wrap;align-items:center}
+.footer-nav a{color:#cfe0f6;text-decoration:none;font-size:0.95rem;padding:6px 0}
+.footer-nav a:hover{text-decoration:underline}
+.footer-right{flex:1 1 220px;text-align:right}
+.social{display:flex;justify-content:flex-end;gap:8px;margin-bottom:8px}
+.social-link{background:transparent;border:1px solid rgba(255,255,255,0.08);color:#e6eef8;padding:6px 8px;border-radius:6px;text-decoration:none;font-size:0.85rem}
+.social-link:hover{background:rgba(255,255,255,0.03)}
+copyright{font-size:0.9rem;color:#9fb0cc}
+@media (max-width:720px){
+  .footer-inner{flex-direction:column;align-items:flex-start}
+  .footer-right{text-align:left}
+  .social{justify-content:flex-start}
+}
+</style>
+
+<script>
+document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
